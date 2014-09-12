@@ -22,6 +22,7 @@
 		AC35A00C19C36F4800351051 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC359FEB19C36F4800351051 /* UIKit.framework */; };
 		AC35A01419C36F4800351051 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC35A01219C36F4800351051 /* InfoPlist.strings */; };
 		AC35A01619C36F4800351051 /* SudokuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC35A01519C36F4800351051 /* SudokuTests.m */; };
+		AC35A02119C370BD00351051 /* JKMVGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC35A02019C370BD00351051 /* JKMVGridView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		AC35A01119C36F4800351051 /* SudokuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SudokuTests-Info.plist"; sourceTree = "<group>"; };
 		AC35A01319C36F4800351051 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AC35A01519C36F4800351051 /* SudokuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SudokuTests.m; sourceTree = "<group>"; };
+		AC35A01F19C370BD00351051 /* JKMVGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKMVGridView.h; sourceTree = "<group>"; };
+		AC35A02019C370BD00351051 /* JKMVGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKMVGridView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				AC359FFC19C36F4800351051 /* Main_iPad.storyboard */,
 				AC359FFF19C36F4800351051 /* JKMVViewController.h */,
 				AC35A00019C36F4800351051 /* JKMVViewController.m */,
+				AC35A01F19C370BD00351051 /* JKMVGridView.h */,
+				AC35A02019C370BD00351051 /* JKMVGridView.m */,
 				AC35A00219C36F4800351051 /* Images.xcassets */,
 				AC359FEE19C36F4800351051 /* Supporting Files */,
 			);
@@ -256,6 +261,7 @@
 			files = (
 				AC35A00119C36F4800351051 /* JKMVViewController.m in Sources */,
 				AC359FF819C36F4800351051 /* JKMVAppDelegate.m in Sources */,
+				AC35A02119C370BD00351051 /* JKMVGridView.m in Sources */,
 				AC359FF419C36F4800351051 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

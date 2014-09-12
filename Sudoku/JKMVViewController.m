@@ -6,10 +6,25 @@
 //  Copyright (c) 2014 Josh Kutsko Matt Valentine. All rights reserved.
 //
 
+#import "JKMVGridView.h"
 #import "JKMVViewController.h"
 
-@interface JKMVViewController ()
+int initialGrid[9][9] = {
+    {7,0,0,4,2,0,0,0,9},
+    {0,0,9,5,0,0,0,0,4},
+    {0,2,0,6,9,0,5,0,0},
+    {6,5,0,0,0,0,4,3,0},
+    {0,8,0,0,0,6,0,0,7},
+    {0,1,0,0,4,5,6,0,0},
+    {0,0,0,8,6,0,0,0,2},
+    {3,4,0,9,0,0,1,0,0},
+    {8,0,0,3,0,2,7,4,0}
+};
 
+@interface JKMVViewController ()
+{
+    JKMVGridView* _gridView;
+}
 @end
 
 @implementation JKMVViewController
@@ -18,6 +33,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    CGRect mainFrame = CGRectMake(50,50,200,200);
+    _gridView = [[JKMVGridView alloc] initWithFrame: mainFrame ];
+    [self.view addSubview:_gridView];
 }
 
 - (void)didReceiveMemoryWarning
