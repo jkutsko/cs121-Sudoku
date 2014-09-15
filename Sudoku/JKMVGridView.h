@@ -10,6 +10,6 @@
 
 @interface JKMVGridView : UIView
 
--(id) initWithFrame:(CGRect)frame;
+-(id) initWithFrame:(CGRect)frame andIntialGrid:(int[9][9])grid;
 
 @end

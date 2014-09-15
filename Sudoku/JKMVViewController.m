@@ -33,8 +33,12 @@ int initialGrid[9][9] = {
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    CGRect mainFrame = CGRectMake(50,50,200,200);
-    _gridView = [[JKMVGridView alloc] initWithFrame: mainFrame ];
+    
+    int width = self.view.bounds.size.width;
+    
+    CGRect mainFrame = CGRectMake(round(0.1*width), round(0.1*width), round(0.8*width), round(0.8*width));
+    
+    _gridView = [[JKMVGridView alloc] initWithFrame: mainFrame andIntialGrid:initialGrid];
     [self.view addSubview:_gridView];
 }
 
