@@ -16,7 +16,16 @@
 
 @implementation JKMVGridView
 
-- (id)initWithFrame:(CGRect)frame
+- (void)gridCellSelected:(id)sender
+{
+    UIButton* cell = (UIButton*)sender;
+    int row = cell.tag % 10;
+    int col = cell.tag / 10;
+    
+    NSLog(@"Cell Selected: (%d, %d)", row, col);
+}
+
+- (id)initWithFrame:(CGRect)frame andIntialGrid:(int[9][9])grid
 {
     self = [super initWithFrame:frame];
     if (self)
@@ -25,7 +34,7 @@
         
         double x, y;
         int w=frame.size.width, h=frame.size.height;
-        double rel_margin=1, rel_cell_size=1, rel_cell_sep=.2;
+        double rel_margin=0.5, rel_cell_size=1, rel_cell_sep=.2;
         double total=4*rel_margin + 3*(3*rel_cell_size + 2*rel_cell_sep);
         
         y=0;
@@ -47,8 +56,25 @@
                 CGRect cellFrame = CGRectMake(round(x), round(y), rel_cell_size*w/total, rel_cell_size*h/total);
                 
                 UIButton *cell = [[UIButton alloc] initWithFrame:cellFrame];
+                
                 cell.backgroundColor = [UIColor whiteColor];
+                
+                NSString *title;
+                if (grid[i][j] != 0) {
+                    title = [NSString stringWithFormat:@"%d", grid[i][j]];
+                } else {
+                    title = @"";
+                }
+                
+                [cell setTitle:title forState:UIControlStateNormal];
+                [cell setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                
                 cell.tag = 10*i+j;
+                
+                cell.showsTouchWhenHighlighted = YES;
+                
+                [cell addTarget:self action:@selector(gridCellSelected:)
+                    forControlEvents:UIControlEventTouchDown];
                 
                 _cells[i][j] = cell;
                 [self addSubview:cell];
