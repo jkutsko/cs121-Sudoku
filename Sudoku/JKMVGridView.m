@@ -23,6 +23,7 @@
     int col = cell.tag / 10;
     
     NSLog(@"Cell Selected: (%d, %d)", row, col);
+    
 }
 
 - (id)initWithFrame:(CGRect)frame andIntialGrid:(int[9][9])grid
